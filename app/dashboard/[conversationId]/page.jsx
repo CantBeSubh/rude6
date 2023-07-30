@@ -54,7 +54,7 @@ export default function ConversationPage({ params }) {
 
     if (loading) return <div>Loading...</div>
     return (
-        <div className='flex'>
+        <div className='flex bg-gray-800'>
             <Aside />
             <Chat id={params.conversationId} initialMessages={initialMessages} />
         </div>

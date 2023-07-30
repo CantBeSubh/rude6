@@ -19,6 +19,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Amplify } from 'aws-amplify';
 import awsExports from '@/src/aws-exports';
+import { useEffect } from "react";
 
 
 Amplify.configure({ ...awsExports, ssr: true });
@@ -30,6 +31,18 @@ const formSchema = z.object({
 
 
 const ConfirmForm = () => {
+    useEffect(() => {
+        const checkUser = async () => {
+            try {
+                await Auth.currentAuthenticatedUser()
+                window.location.href = "/dashboard"
+
+            } catch (err) {
+                console.log(err)
+            }
+        }
+        checkUser()
+    }, [])
     const form = useForm({ resolver: zodResolver(formSchema) })
 
     const onConfirm = async (values) => {

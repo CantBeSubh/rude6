@@ -23,7 +23,7 @@ export default function DashboardPage() {
   }, [])
   if (loading) return <div>Loading...</div>
   return (
-    <div className='flex'>
+    <div className='flex bg-gray-800'>
       <Aside />
       <Chat />
     </div>

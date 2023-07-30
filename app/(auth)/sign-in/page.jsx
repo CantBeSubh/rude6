@@ -22,6 +22,7 @@ import {
 } from "@/components/ui/form"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { useEffect } from "react";
 
 const formSchema = z.object({
     email: z.string().email({ message: "Invalid Email" }).nonempty({ message: "E-Mail is required" }),
@@ -30,6 +31,18 @@ const formSchema = z.object({
 
 
 const SignInForm = () => {
+    useEffect(() => {
+        const checkUser = async () => {
+            try {
+                await Auth.currentAuthenticatedUser()
+                window.location.href = "/dashboard"
+
+            } catch (err) {
+                console.log(err)
+            }
+        }
+        checkUser()
+    }, [])
     const form = useForm({ resolver: zodResolver(formSchema) })
 
     const onSubmit = async (values) => {

@@ -19,7 +19,7 @@ const API_LIMIT = 4;
 export default function Chat({ initialMessages = [], id = "" }) {
     const [ID, setID] = useState(id);
 
-    const { messages, input, handleInputChange, setInput, append } = useChat({
+    const { messages, input, handleInputChange, setInput, append, isLoading } = useChat({
         initialMessages,
     })
 
@@ -69,7 +69,7 @@ export default function Chat({ initialMessages = [], id = "" }) {
         } else {
 
             const conversationDetails = {
-                name: input.split(' ')[0],
+                name: input,
                 messages: JSON.stringify(messages),
             }
 
@@ -85,32 +85,34 @@ export default function Chat({ initialMessages = [], id = "" }) {
 
     }
     return (
-
-        <div className="flex flex-col w-full max-w-md py-24 stretch  ml-[45%]">
+        <div className="flex flex-col w-full max-w-2xl py-24 mx-auto">
             <Progress className="fixed top-0 h-2 left-[20%] w-4/5" value={Math.min((messages.length / API_LIMIT) * 100, 100)} />
 
-            {!ID && <h1 className='tracking-tight text-center text-8xl'>ASK ME SOMETING</h1>}
-            {messages.map(m => (
-                m.id === "HIDEME" ?
-                    <div key={m.id}></div>
-                    :
-                    <div
-                        key={m.id}
-                        className={`p-2 mb-2 rounded shadow-xl ${m.role === 'user' ? 'bg-blue-200' : 'bg-gray-200'}`}
-                    >
-                        {m.role === 'user' ? 'User: ' : 'AI: '}
-                        {m.content}
-                    </div>
-            ))}
+            {!ID && <h1 className='tracking-tight text-center text-white text-8xl'>RUDEGPT</h1>}
+            <div className=''>
 
-            <form onSubmit={handleSubmit} className='fixed bottom-0 w-1/3 mx-auto'>
-                <div className='flex'>
-                    <Input
-                        className="w-full max-w-md p-2 mb-8 border border-gray-300 rounded shadow-xl "
-                        value={input}
-                        onChange={handleInputChange}
-                    />
-                </div>
+                {messages.map(m => (
+                    m.id === "HIDEME" ?
+                        <div key={m.id}></div>
+                        :
+                        <div
+                            key={m.id}
+                            className={`p-2 mb-2 text-white rounded shadow-xl ${m.role === 'user' ? 'bg-gray-600' : 'bg-gray-700'}`}
+                        >
+                            {m.role === 'user' ? 'User: ' : 'AI: '}
+                            {m.content}
+                        </div>
+                ))}
+            </div>
+
+            <form onSubmit={handleSubmit} className='fixed bottom-0 w-4/5 '>
+                <Input
+                    className="w-full max-w-2xl p-2 mb-8 text-white bg-gray-700 rounded shadow-xl "
+                    value={input}
+                    onChange={handleInputChange}
+                    placeholder="Type your message here..."
+                    disabled={isLoading}
+                />
             </form>
         </div>
 
