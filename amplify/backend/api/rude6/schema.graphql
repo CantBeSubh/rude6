@@ -1,0 +1,5 @@
+type Conversation @model @auth(rules: [{ allow: owner }]) {
+    id: ID!
+    name: String
+    messages: [AWSJSON]
+}

@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-rude6-dev-150323-authRole",
+      "UnauthRoleArn": "arn:aws:iam::817190391051:role/amplify-rude6-dev-150323-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::817190391051:role/amplify-rude6-dev-150323-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-rude6-dev-150323-deployment",
+      "UnauthRoleName": "amplify-rude6-dev-150323-unauthRole",
+      "StackName": "amplify-rude6-dev-150323",
+      "StackId": "arn:aws:cloudformation:ap-south-1:817190391051:stack/amplify-rude6-dev-150323/cfbb6d20-2d29-11ee-a54a-069170aa1078",
+      "AmplifyAppId": "dwp3belrj6vhd"
+    },
+    "categories": {
+      "auth": {
+        "rude65ca319e8": {}
+      },
+      "api": {
+        "rude6": {}
+      }
+    }
+  }
+}
