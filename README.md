@@ -1,5 +1,8 @@
 ![AWS Amplify HACKATHON](https://github.com/CantBeSubh/rude6/assets/83113185/73ccb00b-52db-4952-b7f1-7a0483877b70)
 
+# TODO
+- [ ] Implement [TypeChat](https://microsoft.github.io/TypeChat/)
+      
 # 💫Important Links:
 * [Main Blog on Hashnode](https://hashnode.subhranshu.com/rudegpt-an-unconventional-chatgpt-bootleg-with-an-attitude)
   
