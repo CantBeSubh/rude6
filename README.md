@@ -2,7 +2,7 @@
 
 # 💫Important Links:
 * [Main Blog on Hashnode](https://hashnode.subhranshu.com/rudegpt-an-unconventional-chatgpt-bootleg-with-an-attitude)
-* 
+  
 * [Live Demo](https://www.rudegpt.subhranshu.com/) (there's a 403 error on some browsers,try alt) / [Alt Live Demo](https://master.d37rueynvcncmk.amplifyapp.com/)
     
 * [How to Setup RudeGPT locally?(hashnode)](https://hashnode.subhranshu.com/setting-up-rudegpt-locally)
